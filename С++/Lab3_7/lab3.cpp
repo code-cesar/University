@@ -1,8 +1,6 @@
-// ConsoleApplication8.cpp: определяет точку входа для консольного приложения.
-//
 
 #include "stdafx.h"
-#include "fstream" // подключаем библиотеку
+#include "fstream" 
 #include <iostream>
 using namespace std;
 class sort {
@@ -10,27 +8,27 @@ private:
 	int size_mas;
 	char *str_sort;
 public:
-	bool read_file(ifstream&); // чтения файла,передаёться объект файла
+	bool read_file(ifstream&); // С‡С‚РµРЅРёСЏ С„Р°Р№Р»Р°,РїРµСЂРµРґР°С‘С‚СЊСЃСЏ РѕР±СЉРµРєС‚ С„Р°Р№Р»Р°
 	void sort_bubbly();
 	void sort_inserts();
 	void watch_mas();
-	~sort(){ // десконструктор
+	~sort(){ // РґРµСЃРєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		delete [] str_sort;
 	}
 };
 
 bool sort::read_file(ifstream& f)
 {
-	f >> size_mas; // чтение первого символа,то есть кол-во элементов в массиве
-	str_sort = new char[size_mas +1]; // выделение памети для этого всего
+	f >> size_mas; // С‡С‚РµРЅРёРµ РїРµСЂРІРѕРіРѕ СЃРёРјРІРѕР»Р°,С‚Рѕ РµСЃС‚СЊ РєРѕР»-РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РјР°СЃСЃРёРІРµ
+	str_sort = new char[size_mas +1]; // РІС‹РґРµР»РµРЅРёРµ РїР°РјРµС‚Рё РґР»СЏ СЌС‚РѕРіРѕ РІСЃРµРіРѕ
 	for (int tr = 0; tr < size_mas; tr++)
 	{
-		f >> str_sort[tr]; // берём символ из файла и записываем в переменную,разделяет через пробел
+		f >> str_sort[tr]; // Р±РµСЂС‘Рј СЃРёРјРІРѕР» РёР· С„Р°Р№Р»Р° Рё Р·Р°РїРёСЃС‹РІР°РµРј РІ РїРµСЂРµРјРµРЅРЅСѓСЋ,СЂР°Р·РґРµР»СЏРµС‚ С‡РµСЂРµР· РїСЂРѕР±РµР»
 		if (!(str_sort[tr] >= 'A' && str_sort[tr] <= 'Z' ||
-			str_sort[tr] >= 'a' && str_sort[tr] <= 'z')) // проверка на латинский алфавит
+			str_sort[tr] >= 'a' && str_sort[tr] <= 'z')) // РїСЂРѕРІРµСЂРєР° РЅР° Р»Р°С‚РёРЅСЃРєРёР№ Р°Р»С„Р°РІРёС‚
 		{
-			cout << "Символ "<< str_sort[tr] << " не латинская буква " << endl;
-			return 0;// возвращаем ошибку
+			cout << "РЎРёРјРІРѕР» "<< str_sort[tr] << "  РЅРµ Р»Р°С‚РёРЅСЃРєР°СЏ Р±СѓРєРІР° " << endl;
+			return 0;// РІРѕР·РІСЂР°С‰Р°РµРј РѕС€РёР±РєСѓ
 		}
 	}
 	return 1;
@@ -42,7 +40,7 @@ void sort::sort_bubbly()
 	{
 		for (int j = size_mas - 1; j >= i; --j)
 		{
-			if (str_sort[j - 1] < str_sort[j]) // заменил знак > на < получил обратный порядок
+			if (str_sort[j - 1] < str_sort[j]) // Р·Р°РјРµРЅРёР» Р·РЅР°Рє > РЅР° < РїРѕР»СѓС‡РёР» РѕР±СЂР°С‚РЅС‹Р№ РїРѕСЂСЏРґРѕРє
 			{
 				a = str_sort[j - 1];
 				str_sort[j - 1] = str_sort[j];
@@ -57,7 +55,7 @@ void sort::sort_inserts()
 	for (int i = 1; i < size_mas; ++i)
 	{
 		a = str_sort[i];
-		for (int j = i - 1; (j >= 0) && (a > str_sort[j]); j--) // заменил < на > получил обратный порядок
+		for (int j = i - 1; (j >= 0) && (a > str_sort[j]); j--) // Р·Р°РјРµРЅРёР» < РЅР° > РїРѕР»СѓС‡РёР» РѕР±СЂР°С‚РЅС‹Р№ РїРѕСЂСЏРґРѕРє
 		{
 			str_sort[j + 1] = str_sort[j];
 			str_sort[j] = a;
@@ -66,7 +64,7 @@ void sort::sort_inserts()
 }
 void sort::watch_mas()
 {
-	cout << "Массив:";
+	cout << "РњР°СЃСЃРёРІ:";
 	for (int tr = 0; tr < size_mas; tr++)cout << str_sort[tr] << " ";
 	cout << endl;
 }
@@ -75,7 +73,7 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	ifstream fin;
 	fin.open("text.txt");
-	if (!fin)cout << "Файл не открыт" << endl;
+	if (!fin)cout << "Р¤Р°Р№Р» РЅРµ РѕС‚РєСЂС‹С‚" << endl;
 	else
 	{
 		sort ur;
@@ -83,19 +81,19 @@ int main()
 		{
 			ur.watch_mas();
 			ur.sort_inserts();
-			cout << "А)Сортировка в обратном лексикографическом порядке методом вставками:" << endl;
+			cout << "Рђ)РЎРѕСЂС‚РёСЂРѕРІРєР° РІ РѕР±СЂР°С‚РЅРѕРј Р»РµРєСЃРёРєРѕРіСЂР°С„РёС‡РµСЃРєРѕРј РїРѕСЂСЏРґРєРµ РјРµС‚РѕРґРѕРј РІСЃС‚Р°РІРєР°РјРё:" << endl;
 			ur.watch_mas();
-			fin.seekg(ios::beg);
+			fin.seekg(ios::beg);//Р’РѕР·РІСЂР°С‰Р°СЋСЃСЊ РЅР° РЅР°С‡Р°Р»Рѕ С„Р°Р№Р»Р°
 			if (ur.read_file(fin))
 			{
 				ur.watch_mas();
 				ur.sort_bubbly();
-				cout << "Б)Сортировка в обратном лексикографическом порядке методом обмена:" << endl;
+				cout << "Р‘)РЎРѕСЂС‚РёСЂРѕРІРєР° РІ РѕР±СЂР°С‚РЅРѕРј Р»РµРєСЃРёРєРѕРіСЂР°С„РёС‡РµСЃРєРѕРј РїРѕСЂСЏРґРєРµ РјРµС‚РѕРґРѕРј РѕР±РјРµРЅР°:" << endl;
 				ur.watch_mas();
 			}
-			else cout << "Прочитать файл невозможно" << endl;
+			else cout << "РџСЂРѕС‡РёС‚Р°С‚СЊ С„Р°Р№Р» РЅРµРІРѕР·РјРѕР¶РЅРѕ" << endl;
 		}
-		else cout << "Прочитать файл невозможно" << endl;
+		else cout << "РџСЂРѕС‡РёС‚Р°С‚СЊ С„Р°Р№Р» РЅРµРІРѕР·РјРѕР¶РЅРѕ" << endl;
 	}
 	fin.close();
 	system("pause");
