@@ -34,7 +34,7 @@ void mat_2x2::out_mat()
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	cout << "Ââåäèòå çíà÷åíèè ìàòðèöû A(2x2):" << endl << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¸ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹ A(2x2):" << endl << endl;
 	mat_2x2 A;
 	for (int qw = 0; qw < 2; qw++)
 	{
@@ -42,40 +42,40 @@ int main()
 		{
 
 			float p = 0.0;
-			cout << "Ââåäèòå çíà÷åíèÿ ýëåìåíòà  " << qw << "x" << tr << " :" << endl;
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°  " << qw << "x" << tr << " :" << endl;
 			while (!(cin >> p))
 			{
-				cout << "Ââ¸äåíî íå âåùåñòâåííîå ÷èñëî" << endl;
+				cout << "Ð’Ð²Ñ‘Ð´ÐµÐ½Ð¾ Ð½Ðµ Ð²ÐµÑ‰ÐµÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾" << endl;
 				cin.clear();
 				cin.seekg(ios::end);
 				cin.ignore(EOF);
-				cout << "Ââåäèòå ïîâòîðíî çíà÷åíèÿ ýëåìåíòà  " << qw << "x" << tr << " :" << endl;
+				cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð½Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°  " << qw << "x" << tr << " :" << endl;
 			}
 			A.set_mat(qw,tr,p);
 		}
 	}
-	cout << endl << "Ââåäèòå çíà÷åíèÿ ìàòðèöû B(2x2):" << endl << endl;
+	cout << endl << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¸ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹ B(2x2):" << endl << endl;
 	mat_2x2 B;
 	for (int qw = 0; qw < 2; qw++)
 	{
 		for (int tr = 0; tr < 2; tr++)
 		{
 			float p = 0.0;
-			cout << "Ââåäèòå çíà÷åíèÿ ýëåìåíòà  " << qw << "x" << tr << " :" << endl;
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°  " << qw << "x" << tr << " :" << endl;
 			while (!(cin >> p))
 			{
-				cout << "Ââ¸äåíî íå âåùåñòâåííîå ÷èñëî" << endl;
+				cout << "Ð’Ð²Ñ‘Ð´ÐµÐ½Ð¾ Ð½Ðµ Ð²ÐµÑ‰ÐµÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾" << endl;
 				cin.clear();
 				cin.seekg(ios::end);
 				cin.ignore(EOF);
-				cout << "Ââåäèòå ïîâòîðíî çíà÷åíèÿ ýëåìåíòà  " << qw << "x" << tr << " :" << endl;
+				cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð½Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°  " << qw << "x" << tr << " :" << endl;
 			}
 			B.set_mat(qw, tr, p);
 		}
 	}
 	mat_2x2 T;
 	T = A*B;
-	cout << endl << "Ìàòðèöà T: " << endl;
+	cout << endl << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° T: " << endl;
 	T.out_mat();
 	system("pause");
 	return 0;
