@@ -5,7 +5,7 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	ifstream f;
 	f.open("input.txt",ios::in);
-	if (!f)cout << "Ôàéë íå îòêðûò" << endl;
+	if (!f)cout << "Ð¤Ð°Ð¹Ð» Ð½Ðµ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚" << endl;
 	else
 	{
 		f.seekg(ios::beg);
@@ -14,14 +14,14 @@ int main()
 		streamoff leng = f.tellg();
 		int train_cs = 0, airbus_cs = 0;
 		char c;
-		cout << "Òåêóùèé ãîä: " << years << endl;
+		cout << "Ã’Ã¥ÃªÃ³Ã¹Ã¨Ã© Ã£Ã®Ã¤: " << years << endl;
 		do {
 			f >> c;
-			if (c == 'Ï')
+			if (c == 'Ã')
 			{
 				train_cs = train_cs + 1;
 			}
-			else if (c == 'Ñ')
+			else if (c == 'Ã‘')
 			{
 				airbus_cs = airbus_cs + 1;
 			}
@@ -46,12 +46,12 @@ int main()
 			f >> firm >> mark >> year_strt >> counts;
 			cout << c << " " << firm << " " << mark << " " << year_strt << " " << counts << endl;
 			_transport[counts_all] = Transport(year_strt, firm, mark);
-			if (c == 'Ï')
+			if (c == 'Ã')
 			{
 				_train[counts_train] = Train(firm, mark, year_strt, counts);
 				counts_train++;
 			}
-			else if (c == 'Ñ')
+			else if (c == 'Ã‘')
 			{
 				_airbus[counts_airbus] = AirBus(firm, mark, year_strt, counts);
 				counts_airbus++;
