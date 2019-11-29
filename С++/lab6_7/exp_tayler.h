@@ -1,8 +1,9 @@
 
+
 #include "stdafx.h"
 
 int factorial(int f) {
-	return (f <= 0) ? (f < 0) ? 0 : 1 : factorial(f - 1); // Òåğíàğíûé îïåğàòîğ
+	return (f <= 0) ? (f < 0) ? 0 : 1 : factorial(f - 1); // Ğ¢ĞµÑ€Ğ½Ğ°Ñ€Ğ½Ñ‹Ğ¹ Ğ¾Ğ¿ĞµÑ€Ğ°Ñ‚Ğ¾Ñ€
 }
 
 class exp_tayler {
@@ -27,20 +28,20 @@ ostream& operator <<(std::ostream& out, exp_tayler& o)
 }
 istream& operator >> (istream& in, exp_tayler& tayl) 
 {
-	cout << "Ââåäèòå n ïåğâûõ ñëàãàåìûõ:" << endl;
+	cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ n Ğ¿ĞµÑ€Ğ²Ñ‹Ñ… ÑĞ»Ğ°Ğ³Ğ°ĞµĞ¼Ñ‹Ñ…:" << endl;
 	while (!(in >> tayl.n))
 	{
-		cout << "Ââåäèòå êîğğåêòíîå çíà÷åíèå n!:" << endl;
+		cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ñ€Ñ€ĞµĞºÑ‚Ğ½Ğ¾Ğµ Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ğµ n!:" << endl;
 		in.clear();
 		in.seekg(ios::end);
 		in.ignore(EOF);
 	}
-	cout << "Ââåäèòå çíà÷åíèå x:\n";
+	cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ğµ x:\n";
 	in.seekg(ios::end);
 	in.ignore(EOF);
 	while (!(in >> tayl.x)) 
 	{
-		std::cout << "Ââåäèòå êîğğåêòíîå çíà÷åíèå x!:" << endl;
+		std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ñ€Ñ€ĞµĞºÑ‚Ğ½Ğ¾Ğµ Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ğµ x!:" << endl;
 		in.clear();
 		in.seekg(ios::end);
 		in.ignore(EOF);
