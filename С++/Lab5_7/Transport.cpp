@@ -25,7 +25,7 @@ void Train::ChangeV(int v)
 void Train::Print(int tr, ofstream& f)
 {
 	if(tr >= YearB) f << this->Firm << " " << this->Marka << " " << this->YearB << " " << this->Vagon << endl;
-	else f << this->Firm << " " << this->Marka << " " << "åùå íå ñôîğìèğîâàí" << " " << this->Vagon << endl;
+	else f << this->Firm << " " << this->Marka << " " << "ĞµÑ‰Ğµ Ğ½Ğµ ÑÑ„Ğ¾Ñ€Ğ¼Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½" << " " << this->Vagon << endl;
 }
 
 void AirBus::ChangeS(int v)
@@ -36,8 +36,8 @@ void AirBus::Print(int tr,ofstream& f)
 {
 	if (tr >= YearB)
 	{
-		if ((tr-YearB) > 20)f << this->Firm << " " << this->Marka << " " << "Ëåòàòü íåëüçÿ!" << " " << this->seat << endl;
+		if ((tr-YearB) > 20)f << this->Firm << " " << this->Marka << " " << "Ğ‹ĞµÑ‚Ğ°Ñ‚ÑŒ Ğ½ĞµĞ»ÑŒĞ·Â¤!" << " " << this->seat << endl;
 		else f << this->Firm << " " << this->Marka << " " << this->YearB << " " << this->seat << endl;
 	}
-	else f << this->Firm << " " << this->Marka << " " << "åùå íå ñôîğìèğîâàí" << " " << this->seat << endl;
+	else f << this->Firm << " " << this->Marka << " " << "ĞµÑ‰Ğµ Ğ½Ğµ ÑÑ„Ğ¾Ñ€Ğ¼Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½" << " " << this->seat << endl;
 }
